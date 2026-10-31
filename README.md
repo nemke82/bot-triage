@@ -1,3 +1,5 @@
+<p align="center"><img src="assets/logo.svg" width="128" alt="bot-triage logo"></p>
+
 # bot-triage
 
 An agent skill that finds and stops the bots, crawlers and vulnerability scanners
