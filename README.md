@@ -5,6 +5,9 @@
 An agent skill that finds and stops the bots, crawlers and vulnerability scanners
 overloading a Linux web server, on any common stack.
 
+Get it on [Agensi](https://www.agensi.io/skills/bot-triage) or clone this repo
+(see [Install](#install)).
+
 Ask your coding agent something like *"the server load is 30, find out what is
 hitting it"* and it will:
 
@@ -35,14 +38,43 @@ They are read-only: nothing changes on the server until you approve a proposed r
 
 ## Install
 
+### From Agensi
+
+bot-triage is listed on Agensi: <https://www.agensi.io/skills/bot-triage>
+
+1. Open the listing and download the skill zip.
+2. Unzip it into your agent's skills directory. For Claude Code:
+
+   ```sh
+   mkdir -p ~/.claude/skills/bot-triage
+   unzip bot-triage.zip -d ~/.claude/skills/bot-triage
+   ```
+
+   For a single project only, use `.claude/skills/bot-triage` inside that project.
+3. Start a new session. The skill loads automatically when you describe a load
+   or bot problem, and you can also ask for it by name.
+
+The zip has `SKILL.md` at its root, next to `scripts/` and `references/`, so it
+unpacks straight into the skill folder.
+
+### From GitHub
+
 Claude Code (personal skill):
 
 ```sh
-git clone <this repo> ~/.claude/skills/bot-triage
+git clone https://github.com/nemke82/bot-triage ~/.claude/skills/bot-triage
 ```
 
-Other agents that support `SKILL.md` skills: copy the folder into that agent's
-skills directory. You can also run the scripts by hand:
+Update later with `git -C ~/.claude/skills/bot-triage pull`.
+
+### Other agents
+
+Any agent that supports `SKILL.md` skills: copy the folder (or unzip the Agensi
+download) into that agent's skills directory.
+
+### Without an agent
+
+The scripts also run by hand:
 
 ```sh
 sudo bash scripts/triage.sh -m 15
